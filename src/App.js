@@ -1,9 +1,15 @@
 import React from "react"
 import Title from "./components/Title"
+import Search from "./components/Search"
 
 function App() {
   return (
-    <Title />
+    <div>
+
+      <Title />
+      <Search />
+
+    </div>
   );
 }
 
