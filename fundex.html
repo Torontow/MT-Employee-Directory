@@ -7,23 +7,52 @@
     <meta name="theme-color" content="#000000" />
     <meta name="description" content="Web site created using create-react-app" />
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="funstyle.css" />
     <title>Employee Directory</title>
 </head>
 
 <body>
-    <div id="root">
-        stuff
+    <div class="" id="main-wrapper">
+        <div class="border-bottom border-warning border-5 py-4" id="title-panel">
+            <h1>Employee Directory</h1>
+            <p>Search for a name or click the heading to sort by that heading.</p>
+        </div>
+
+        <div class="row justify-content-center mb-4" id="search-panel">
+            <div class="col-3 pt-3 pb-2">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" aria-label="search field" placeholder="Search">
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="list-wrapper">
+            <div class="row border-top border-black-25 border-2 py-1" id="list-head">
+                <div class="col-2">Image</div>
+                <div class="col-3">Name</div>
+                <div class="col-2">Phone</div>
+                <div class="col-4">Email</div>
+                <div class="col-1">DOB</div>
+            </div>
+
+        </div>
+
+
+
+
 
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-    </script>
+        </script>
 
 </body>
 
