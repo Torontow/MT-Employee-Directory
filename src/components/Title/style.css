@@ -3,3 +3,7 @@
     background-color: darkblue;
     color: white;
 }
+
+h1 {
+    text-shadow: 2px 3px rgb(131, 130, 130);
+}
