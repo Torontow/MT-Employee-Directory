@@ -1,18 +1,60 @@
-import React from "react"
+import React, { Component } from "react"
 import Title from "./components/Title"
-import Search from "./components/Search"
+import SearchPanel from "./components/SearchPanel"
 import List from "./components/List"
+import API from "./utils/API";
 
-function App() {
-  return (
-    <div>
 
-      <Title />
-      <Search />
-      <List />
+class App extends Component {
+  state = {
+    search: "",
+    results: [],
+    all: []
+  };
 
-    </div>
-  );
+  // when this component mounts, display the random user list.
+
+  componentDidMount() {
+    this.getEmployeeList()
+  }
+
+  getEmployeeList() {
+    API.getEmps()
+      .then(res => {
+        let newRes = res.data.results.map((employee, index) => {
+          return {
+            "picture": employee.picture.thumbnail,
+            "name": employee.name.first + " " + employee.name.last,
+            "phone": employee.phone,
+            "email": employee.email,
+            "dob": employee.dob.date,
+            "id": index
+          }
+        })
+        this.setState({ results: newRes, all: newRes })
+      })
+      .catch(err => console.log(err));
+  };
+
+  render() {
+    return (
+      <div>
+        <Title />
+        <SearchPanel 
+          value={this.state.search}
+          handleInputChange={this.handleInputChange}
+        />
+        <List 
+        results={this.state.results}
+        />
+
+      </div>
+
+    )
+  }
+
+
 }
+
 
 export default App;
