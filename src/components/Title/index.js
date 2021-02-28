@@ -8,7 +8,7 @@ function Title() {
       id="title-panel"
     >
       <h1>Employee Directory</h1>
-      <p>Search for a name or click the heading to sort by that heading.</p>
+      <p>Search for a name, or click the list heading to sort by that heading.</p>
     </div>
   );
 }
