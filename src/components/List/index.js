@@ -8,10 +8,10 @@ function List (props) {
         <thead>
           <tr>
             <th scope='col'>Image</th>
-            <th scope='col'>Name</th>
-            <th scope='col'>E-mail</th>
-            <th scope='col'>Phone</th>
-            <th scope='col'>DOB</th>
+            <th scope='col' onClick={() => props.handleOnClick("name")} className="cursor">Name</th>
+            <th scope='col' onClick={() => props.handleOnClick("email")} className="cursor">E-Mail</th>
+            <th scope='col' onClick={() => props.handleOnClick("phone")} className="cursor">Phone</th>
+            <th scope='col' onClick={() => props.handleOnClick("dob")} className="cursor">DOB</th>
           </tr>
         </thead>
         <tbody>

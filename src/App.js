@@ -11,11 +11,18 @@ class App extends Component {
     this.state = {
       search: '',
       results: [],
-      all: []
+      all: [],
+      sortToggle: {
+        "name": false,
+        "phone": false,
+        "email": false,
+        "dob": false
+      }
     }
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleOnClick = this.handleOnClick.bind(this);
   }
-  
+
   componentDidMount () {
     this.getEmployeeList()
   }
@@ -50,6 +57,22 @@ class App extends Component {
     })
   }
 
+  handleOnClick(dataKey) {
+    const all = [...this.state.all]
+    const sortToggle = {...this.state.sortToggle}
+    sortToggle[dataKey] = !sortToggle[dataKey]
+    all.sort((a,b) => {
+      if(sortToggle[dataKey]) return(a[dataKey] > b[dataKey]) ? 1: -1;
+      else return (a[dataKey] < b[dataKey]) ? 1 : -1;
+    })
+    const results = all.filter(employee => employee.name.toLowerCase().includes(this.state.search.toLowerCase()));
+    this.setState({
+      all,
+      sortToggle,
+      results
+    })
+  }
+
   render () {
     return (
       <div>
@@ -57,8 +80,12 @@ class App extends Component {
         <SearchPanel
           value={this.state.search}
           handleInputChange={this.handleInputChange}
+          />
+        <List 
+        results={this.state.results} 
+        handleOnClick={this.handleOnClick}
+        sortToggle={this.state.toggle}
         />
-        <List results={this.state.results} />
       </div>
     )
   }
