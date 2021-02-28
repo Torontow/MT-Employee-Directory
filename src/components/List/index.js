@@ -1,18 +1,35 @@
 import React from 'react'
 import './style.css'
 
-function List () {
+function List (props) {
   return (
-    <div class='container' id='list-wrapper'>
-      <div class='row border-top border-black-25 border-2 py-1' id='list-head'>
-        <div class='col-2'>Image</div>
-        <div class='col-3'>Name</div>
-        <div class='col-2'>Phone</div>
-        <div class='col-4'>Email</div>
-        <div class='col-1'>DOB</div>
-      </div>
+    <div className='employee-table'>
+      <table className='table'>
+        <thead>
+          <tr>
+            <th scope='col'>Image</th>
+            <th scope='col'>Name</th>
+            <th scope='col'>E-mail</th>
+            <th scope='col'>Phone</th>
+            <th scope='col'>DOB</th>
+          </tr>
+        </thead>
+        <tbody>
+          {props.results.map(employee => (
+            <tr key={employee.id}>
+            <td><img src={employee.picture} alt={employee.name}/></td>
+            <td>{employee.name}</td>
+            <td>{employee.phone}</td>
+            <td>{employee.email}</td>
+            <td>{employee.dob}</td>
+          </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   )
 }
+
+
 
 export default List
