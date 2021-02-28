@@ -8,7 +8,7 @@ function SearchPanel (props) {
         <div className='input-group mb-3'>
           <input
             onChange={props.handleInputChange}
-            value={props.value}
+            value={props.search}
             name='search'
             type='text'
             className='form-control'
