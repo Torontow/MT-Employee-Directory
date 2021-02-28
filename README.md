@@ -17,7 +17,7 @@ You have a ton of people on your team and sometimes you just need to find someon
 
 ## Installation
 
-Simply navigate to .
+Simply navigate to https://torontow.github.io/MT-Employee-Directory/.
 
 ## Usage
 
