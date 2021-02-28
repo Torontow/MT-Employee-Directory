@@ -19,8 +19,8 @@ function List (props) {
             <tr key={employee.id}>
             <td><img src={employee.picture} alt={employee.name}/></td>
             <td>{employee.name}</td>
-            <td>{employee.phone}</td>
             <td>{employee.email}</td>
+            <td>{employee.phone}</td>
             <td>{employee.dob}</td>
           </tr>
           ))}

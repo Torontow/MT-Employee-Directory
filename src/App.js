@@ -27,7 +27,7 @@ class App extends Component {
             "name": employee.name.first + " " + employee.name.last,
             "phone": employee.phone,
             "email": employee.email,
-            "dob": employee.dob.date,
+            "dob": employee.dob.date.substring(0,10),
             "id": index
           }
         })
